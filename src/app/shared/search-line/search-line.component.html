@@ -1,0 +1,10 @@
+<div class="filter-search">
+	<div class="filter-form">
+		<div class="wrapper">
+			<input type="text" pInputText [(ngModel)]="inputText" (keydown.enter)="search()" name="searchString" placeholder="Введіть назву або ключове слово..." />
+			<p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Обрати місто" optionLabel="name" filter="true"
+				name="dropdown" [showClear]="true"></p-dropdown>
+			<p-button label="Пошук" icon="pi pi-search" (click)="search()" name="Submit"></p-button>
+		</div>
+	</div>
+</div>

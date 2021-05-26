@@ -1,0 +1,34 @@
+<div *ngIf="isShowDialog" id="chatDialog" title="Chat with the admin" [class]="connect">
+  <div class="close-btn" title="Close chat" (click)="closeChat()">
+    <img src="https://img.icons8.com/cotton/64/000000/delete-sign.png">
+  </div>
+    <div *ngIf="isAskName" id="chatWelcomePanel">
+      <h3>Have a question?</h3>
+      <form id="chatConnectForm">
+        <input name="name" [(ngModel)]="message.senderName" (keyup.enter)="startChat()" class="nameTextbox"
+          placeholder="Enter your name" />
+      </form>
+    </div>
+    <div id="chatConnectionInfo">
+      <strong>Connecting...</strong>
+    </div>
+    <div id="chatMainPanel">
+      <ul id="chatHistory">
+        <li *ngFor="let message of messages; let i = index" class="{{roles[i]}}">
+          <div class="message-header">
+            <span class="name">{{message.senderName }}</span>
+            <span class="time">{{message.sendAt | date}} </span>
+          </div>
+          <div class="message-body">
+            {{message.text}}
+          </div>
+        </li>
+      </ul>
+      <div id="bottomPanel">
+        <form id="chatForm">
+          <input id="messageTextbox" name="text" [(ngModel)]="message.text" (keyup.enter)="sendMessage()"
+            placeholder="Type a message" />
+        </form>
+      </div>
+    </div>
+</div>

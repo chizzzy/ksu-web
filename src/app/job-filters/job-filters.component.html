@@ -1,0 +1,46 @@
+<aside class="right-job-filters">
+  <div id="job-filters">
+    <h4 class="filter-title">Сфера роботи</h4>
+    <p-dropdown [options]="workAreas" [(ngModel)]="selectedWorkArea" placeholder="Обрати сферу діяльності" optionLabel="name"
+      filter="true" (onChange)="filter()"></p-dropdown>
+    <hr>
+
+    <h4 class="filter-title">Компанії</h4>
+    <p-multiSelect [options]="companies" [(ngModel)]="selectedCompanies" placeholder="Обрати компанії"
+      optionLabel="name" filter="true" [displaySelectedLabel]="false" (onChange)="filter()"></p-multiSelect>
+    <hr>
+
+    <h4 class="filter-title">Перевірені</h4>
+    <div class="checked-filter">
+      <p-inputSwitch [(ngModel)]="checked" (onChange)="filter()"></p-inputSwitch>
+      <div class="approved">Перевірені вакансії</div>
+    </div>
+    <hr>
+
+    <h4 class="filter-title">Форма зайнятості</h4>
+    <div class="ui-g" style="width:200px;margin-bottom:10px">
+      <div class="ui-g-12">
+        <p-radioButton name="groupname" label="Неповний робочий день" value="Part-time" [(ngModel)]="selectedTypeOfEmployment"
+          (click)="filter()"></p-radioButton>
+      </div>
+      <div class="ui-g-12">
+        <p-radioButton name="groupname" label="Повний робочий день" value="Full-time" [(ngModel)]="selectedTypeOfEmployment"
+          (click)="filter()"></p-radioButton>
+      </div>
+    </div>
+    <hr>
+
+    <h4 class="filter-title">Зарплата</h4>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">з</span>
+            <input type="text" pKeyFilter="money" [(ngModel)] = "salary" pInputText>  
+            <span class="ui-inputgroup-addon">₴</span>
+            <p-button label="ОК" (onClick)="filter()"></p-button>      
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</aside>

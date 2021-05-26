@@ -1,0 +1,70 @@
+<div class="header">
+  <div class="wrapper">
+    <div id="left-side-menu">
+      <a routerLink="/" routerLinkActive="active">Work KSU</a>
+    </div>
+    <div *ngIf="role === ''">
+      <div id="right-side-menu">
+        <a routerLink="/jobsearch" routerLinkActive="active">Знайти роботу</a>
+        <a class="signIn" (click)="menu.toggle($event)">Увійти</a>
+        <p-menu #menu [popup]="true" [model]="signInItems"></p-menu>
+      </div>
+    </div>
+    <!-- COMPANY HEADER -->
+    <div *ngIf="role === 'company'">
+      <div id="right-side-menu">
+        <a routerLink="/resumessearch" routerLinkActive="active">Пошук резюме</a>
+        <a routerLink="/jobsearch">Вакансії</a>
+
+        <p-sidebar class="profile-sidebar" [(visible)]="visibleForCompany" position="right" [baseZIndex]="10000">
+          <h1 class="company-profile">Профіль</h1>
+          <hr>
+          <p-panelMenu [model]="itemsForCompany" [multiple]="false" [style]="{'width':'250px'}"></p-panelMenu>
+        </p-sidebar>
+
+        <a class="profile" (click)="visibleForCompany = true">
+          <span>Профіль</span>
+          <i class="fa fa-sort-desc"></i>
+        </a>
+      </div>
+    </div>
+    <!-- RECRUITER HEADER -->
+    <div *ngIf="role === 'recruiter'">
+      <div id="right-side-menu">
+        <a routerLink="/resumessearch" routerLinkActive="active">Find Resumes</a>
+        <p-sidebar class="profile-sidebar" [(visible)]="visibleForRecruiter" position="right" [baseZIndex]="10000">
+          <h1 class="company-profile">Profile</h1>
+          <hr>
+          <p-panelMenu [model]="itemsForRecruiter" [multiple]="false" [style]="{'width':'250px'}"></p-panelMenu>
+        </p-sidebar>
+
+        <a class="profile" (click)="visibleForRecruiter = true">
+          <span>Profile</span>
+          <i class="fa fa-sort-desc"></i>
+        </a>
+      </div>
+    </div>
+    <!-- EMPLOYEE HEADER -->
+    <div *ngIf="role === 'employee'">
+      <div id="right-side-menu">
+        <a routerLink="/jobsearch" routerLinkActive="active">Find Vacancies</a>
+        <app-invitation [employeeId]="uId"></app-invitation>
+
+        <p-sidebar class="profile-sidebar" [(visible)]="visibleForEmployee" position="right" [baseZIndex]="10000"
+          blockScroll="true">
+          <h1 class="company-profile">Profile</h1>
+          <hr>
+          <p-panelMenu [model]="itemsForEmployee" [multiple]="false" [style]="{'width':'250px'}"></p-panelMenu>
+        </p-sidebar>
+
+        <a class="profile" (click)="visibleForEmployee = true">
+          <span>Profile</span>
+          <i class="fa fa-sort-desc"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-reset-password  #resetPassword></app-reset-password>
+<app-authorizations (chengeAuthenticatedStatus)="chengeAuthenticatedStatus($event)"></app-authorizations>

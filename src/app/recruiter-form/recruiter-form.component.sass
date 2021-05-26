@@ -1,0 +1,67 @@
+h1, h2, h3, h4, h5, h6 
+  font: inherit
+  color: inherit
+  margin: 0 0 10px
+
+h4 
+  display: block
+  margin-inline-start: 0px
+  margin-inline-end: 0px
+  font-weight: bold
+
+#recruiter-form
+	padding: 0px 25px
+	background: #F9F9F9
+	border: 1px solid #ddd
+	box-shadow: none
+	border-radius: 0
+	font-family: "Open Sans","Helvetica Neue",sans-serif
+
+
+	/deep/ .ui-float-label
+		margin: 40px 0
+
+	.required-input-symbol
+		color: red
+
+	input 
+		width: 100%
+
+	input.ng-touched.ng-invalid
+		border: 1px solid red
+		border-radius: 3px
+
+	input.ng-touched.ng-valid
+		border: 1px solid green
+		border-radius: 3px
+
+	.alert-danger
+		font-size: small
+		font-weight: 500
+		color: red
+		position: absolute
+		top: 35px
+		width: 100%
+		padding: 3px 2px
+
+	.phone
+		margin-top: 50px !important
+	
+	/deep/.ui-button.ui-button-icon-only
+		background-color: green
+		display: none
+		
+	/deep/ .ui-fileupload .ui-fileupload-content
+		overflow: hidden
+
+	/deep/ .ui-fileupload-row>div
+		padding: .2em .3em
+
+	.error-message
+		font-size: small
+		font-weight: 600
+		color: red
+		padding: 5px 2px
+		letter-spacing: .3px
+		position: absolute
+

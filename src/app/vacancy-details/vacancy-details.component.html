@@ -1,0 +1,88 @@
+<div id="vacancy-page" *ngIf="vacancy">
+  <div class="wrapper-flex">
+    <div class="additional-info">
+      <h1>{{vacancy?.name}}</h1>
+      <h2 *ngIf="vacancy?.salary">{{vacancy?.salary}} $</h2>
+      <h3>
+          <span><i class="fa fa-map-marker" ></i>
+           </span>{{vacancy?.city?.name}}
+      </h3>
+      <h3 *ngIf="vacancy?.isChecked">
+          <span ><i class="fa fa-clock-o"></i> </span>{{vacancy?.fullPartTime}}
+      </h3>
+      <h3 *ngIf="vacancy?.isChecked">
+          <span class="checked"><i class="fa fa-check-circle-o"></i> Checked</span>
+      </h3>
+      <h3 *ngIf="!vacancy?.isChecked">
+            <span class="unchecked"><i class="fa fa-times-circle-o"></i> Unchecked</span>
+      </h3>
+     
+      <h5 *ngIf="vacancy?.modDate">
+         <span> {{vacancy?.modDate | date}}</span>
+      </h5>
+      <h5 *ngIf="!vacancy?.modDate">
+        <span> {{vacancy?.createDate | date}}</span>
+      </h5>
+      <hr>
+
+    </div>
+    <p-dialog header="Send my CV" [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
+      [minY]="70" [maximizable]="false" [baseZIndex]="10000" [draggable]="false" [blockScroll]="true" [resizable]="false"
+      [minHeight]="100">
+      <span>Are you sure?</span>
+      <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Yes"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="display=false" label="No" class="ui-button-secondary"></button>
+      </p-footer>
+    </p-dialog>
+    <button type="text" (click)="showDialog()" pButton icon="fa fa-file-text" label="Send my CV" style="height:35px"></button>
+  </div>
+  <div class="additional-info">
+      
+    <h3 class="link" (click)=companyDetails(vacancy?.recruiter?.company?.id) >
+     <span> <i class="fa fa-bank" ></i> Company: </span>{{vacancy?.recruiter?.company?.name}}
+    </h3>
+    
+    <h3  class="link" (click)=recruiterDetails(vacancy?.recruiter?.id)>
+       <span><i class="fa fa-user"></i> Recruiter: </span>{{vacancy?.recruiter?.firstName}}
+        {{vacancy?.recruiter?.lastName}}
+    </h3>
+    <h3 >
+        <span><i class="fa fa-envelope"></i> Email: </span>
+         {{vacancy?.recruiter?.email}}
+     </h3>
+    <h3 *ngIf="vacancy?.recruiter?.company?.site"> 
+        <span><i class="fa fa-globe"></i> Web-site: </span><a
+        href={{vacancy?.recruiter?.company?.site}}>{{vacancy?.recruiter?.company?.site}}</a>
+    </h3>
+   
+  </div>
+  <div class="additional-info">
+    <p-card title="About the vacancy">
+      <div>
+        <p>{{vacancy?.description}}</p>
+      </div>
+    </p-card>
+    <p-card title="Requirements">
+      <ul>
+        <li>
+          <p>{{vacancy?.requirements}}</p>
+        </li>
+      </ul>
+    </p-card>
+    <p-card *ngIf="vacancy?.bePlus"title="Nice to have" >
+      <ul>
+        <li>
+          <p>{{vacancy?.bePlus}}</p>
+        </li>
+      </ul>
+    </p-card>
+    <p-card title="We offer" >
+      <ul>
+        <li>
+          <p>{{vacancy?.offering}}</p>
+        </li>
+      </ul>
+    </p-card>
+  </div>
+</div>
