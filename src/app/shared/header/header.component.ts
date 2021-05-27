@@ -47,9 +47,9 @@ export class HeaderComponent implements OnInit {
     this.activeRoute.params.forEach( (params: Params) =>  this.index = params.id);
 
     this.signInItems = [
-      {label: 'Sign In as Employee', icon: 'fa fa-user', command: (event) => { this.authorizations.showSignIn('Employee'); }},
-      {label: 'Sign In as Company', icon: 'fa fa-building', command: (event) => { this.authorizations.showSignIn('Company'); }},
-      {label: 'Sign In as Recruiter', icon: 'fa fa-user-circle-o', command: (event) => { this.authorizations.showSignIn('Recruiter'); }}
+      {label: 'Увійти як співшукач', icon: 'fa fa-user', command: (event) => { this.authorizations.showSignIn('Employee'); }},
+      {label: 'Увійти як компанія', icon: 'fa fa-building', command: (event) => { this.authorizations.showSignIn('Company'); }},
+      {label: 'Увійти як рекрутер', icon: 'fa fa-user-circle-o', command: (event) => { this.authorizations.showSignIn('Recruiter'); }}
     ];
 
     this.itemsForCompany = this.getItemsForCompany();
@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
         command: (event) => {this.router.navigate(['/companies', this.uId]); }
       },
       {
-      label: 'Sign out',
+      label: 'Вийти',
       icon: 'fa fa-sign-out',
       command: (event) => { this.authHelper.logout(); this.authService.logout(); this.chengeAuthenticatedStatus(); }
       }
@@ -85,7 +85,7 @@ export class HeaderComponent implements OnInit {
         icon: 'fa fa-home',
         command: (event) => { this.router.navigate(['/recruiters', this.uId]); }},
       {
-      label: 'Sign out',
+      label: 'Вийти',
       icon: 'fa fa-sign-out',
       command: (event) => { this.authHelper.logout(); this.router.navigate(['/']); this.chengeAuthenticatedStatus(); }
       }
@@ -102,7 +102,7 @@ export class HeaderComponent implements OnInit {
         command: (event) => { this.router.navigate(['/employees', this.uId]); }
       },
       {
-      label: 'Sign out',
+      label: 'Вийти',
       icon: 'fa fa-sign-out',
       command: (event) => { this.authHelper.logout(); this.router.navigate(['/']); this.chengeAuthenticatedStatus(); }
       }

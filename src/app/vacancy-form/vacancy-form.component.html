@@ -17,13 +17,13 @@
 				</div>
 			<hr>
 
-			<h4 class="vacancy-title">City<span class="required-input-symbol">*</span></h4>
-			<p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name" filter="true"
+			<h4 class="vacancy-title">Місто<span class="required-input-symbol">*</span></h4>
+			<p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Оберіть місто" optionLabel="name" filter="true"
 			 formControlName="city"></p-dropdown>
 			<hr>
 
 			<h4 class="vacancy-title">Work Area<span class="required-input-symbol">*</span></h4>
-			<p-dropdown [options]="workAreas" [(ngModel)]="selectedWorkArea" placeholder="Select a Work Area" optionLabel="name"
+			<p-dropdown [options]="workAreas" [(ngModel)]="selectedWorkArea" placeholder="Обрати сферу роботи" optionLabel="name"
 			 filter="true" formControlName="workArea"></p-dropdown>
 			<hr>
 
@@ -103,7 +103,7 @@
 	<p-footer>
 		<button type="button" pButton icon="pi pi-check" (click)="submit()" [disabled]="vacancyForm.invalid" label="Confirm"
 		 class="ui-button-success"></button>
-		<button type="button" pButton icon="pi pi-times" (click)="display=false" label="Cancel" class="ui-button-secondary"></button>
+		<button type="button" pButton icon="pi pi-times" (click)="display=false" label="Відмінити" class="ui-button-secondary"></button>
 	</p-footer>
 </p-dialog>
 

@@ -26,7 +26,7 @@
       <hr>
 
     </div>
-    <p-dialog header="Send my CV" [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
+    <p-dialog header="Надіслати резюме" [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
       [minY]="70" [maximizable]="false" [baseZIndex]="10000" [draggable]="false" [blockScroll]="true" [resizable]="false"
       [minHeight]="100">
       <span>Are you sure?</span>
@@ -35,16 +35,16 @@
         <button type="button" pButton icon="pi pi-times" (click)="display=false" label="No" class="ui-button-secondary"></button>
       </p-footer>
     </p-dialog>
-    <button type="text" (click)="showDialog()" pButton icon="fa fa-file-text" label="Send my CV" style="height:35px"></button>
+    <button type="text" (click)="showDialog()" pButton icon="fa fa-file-text" label="Надіслати резюме" style="height:35px"></button>
   </div>
   <div class="additional-info">
       
     <h3 class="link" (click)=companyDetails(vacancy?.recruiter?.company?.id) >
-     <span> <i class="fa fa-bank" ></i> Company: </span>{{vacancy?.recruiter?.company?.name}}
+     <span> <i class="fa fa-bank" ></i> Компанія: </span>{{vacancy?.recruiter?.company?.name}}
     </h3>
     
     <h3  class="link" (click)=recruiterDetails(vacancy?.recruiter?.id)>
-       <span><i class="fa fa-user"></i> Recruiter: </span>{{vacancy?.recruiter?.firstName}}
+       <span><i class="fa fa-user"></i> Рекрутер: </span>{{vacancy?.recruiter?.firstName}}
         {{vacancy?.recruiter?.lastName}}
     </h3>
     <h3 >
@@ -58,26 +58,26 @@
    
   </div>
   <div class="additional-info">
-    <p-card title="About the vacancy">
+    <p-card title="Про вакансію">
       <div>
         <p>{{vacancy?.description}}</p>
       </div>
     </p-card>
-    <p-card title="Requirements">
+    <p-card title="Вимоги">
       <ul>
         <li>
           <p>{{vacancy?.requirements}}</p>
         </li>
       </ul>
     </p-card>
-    <p-card *ngIf="vacancy?.bePlus"title="Nice to have" >
+    <p-card *ngIf="vacancy?.bePlus"title="Добре мати" >
       <ul>
         <li>
           <p>{{vacancy?.bePlus}}</p>
         </li>
       </ul>
     </p-card>
-    <p-card title="We offer" >
+    <p-card title="Що ви отримаєте" >
       <ul>
         <li>
           <p>{{vacancy?.offering}}</p>

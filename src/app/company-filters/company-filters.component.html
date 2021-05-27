@@ -1,29 +1,29 @@
 <aside class="right-company-filters">
   <div id="company-filters">
     <h4 class="filter-title">Сфера роботи</h4>
-    <p-dropdown [options]="workAreas" [(ngModel)]="selectedWorkArea" placeholder="Select a Work Area" optionLabel="name"
+    <p-dropdown [options]="workAreas" [(ngModel)]="selectedWorkArea" placeholder="Обрати сферу роботи" optionLabel="name"
       filter="true" (onChange)="filter()"></p-dropdown>
     <hr>
 
-    <h4 class="filter-title">Schools</h4>
-    <p-multiSelect [options]="schools" [(ngModel)]="selectedSchools" placeholder="Select a School(-s)" optionLabel="name"
+    <h4 class="filter-title">Навчальні заклади</h4>
+    <p-multiSelect [options]="schools" [(ngModel)]="selectedSchools" placeholder="Оберіть" optionLabel="name"
       maxSelectedLabels=0 filter="true" (onChange)="filter()" [displaySelectedLabel]="false"></p-multiSelect>
     <hr>
 
-    <h4 class="filter-title">Faculties</h4>
-    <p-multiSelect [options]="faculties" [(ngModel)]="selectedFaculties" placeholder="Select a Faculty(-ies)"
+    <h4 class="filter-title">Факультети</h4>
+    <p-multiSelect [options]="faculties" [(ngModel)]="selectedFaculties" placeholder="Оберіть"
       optionLabel="name" filter="true" (onChange)="filter()" [displaySelectedLabel]="false"></p-multiSelect>
     <hr>
 
-    <h4>Age Range: {{rangeValues[0] + ' - ' + rangeValues[1]}}</h4>
+    <h4>Вік: {{rangeValues[0] + ' - ' + rangeValues[1]}}</h4>
     <div class="age-range">
       <p-slider [(ngModel)]="rangeValues" [style]="{'width':'14em'}" [range]="true"></p-slider>
       <p-button label="Ok" (click)="filter()"></p-button>
     </div>
     <hr>
 
-    <h4 class="filter-title">Languages</h4>
-    <p-multiSelect [options]="languages" [(ngModel)]="selectedLanguages" placeholder="Select a Language(-s)"
+    <h4 class="filter-title">Мови</h4>
+    <p-multiSelect [options]="languages" [(ngModel)]="selectedLanguages" placeholder="Оберіть"
       optionLabel="name" (onChange)="filter()" [displaySelectedLabel]="false"></p-multiSelect>
     <hr>
   </div>

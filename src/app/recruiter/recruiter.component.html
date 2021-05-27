@@ -3,11 +3,10 @@
 <div id="recruiter-page">
 	<div class="recruiter-info">
 		<div class="image">
-		    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/da/SoftServe_logo_new.png" alt="recruiter logo" (click)="companyDetails(recruiter?.company?.id)">
 	    </div>
 		<div class="wrapper-grid">
 			<div>
-				<img class="recruiter-avatar" src="https://avatars1.githubusercontent.com/u/29520599?s=400&u=1f5eddbe458967a9d25e9d3ae35caa4b1074ce6b&v=4" alt="Recruiter avatar">
+				<img class="recruiter-avatar" src="https://i.stack.imgur.com/lABiT.jpg" alt="Recruiter avatar">
 			</div>
 			<div class="recruiter-additional-info">
 				<p>
@@ -15,7 +14,7 @@
 				<p>
 					<span>Email:</span> {{recruiter?.email}}</p>
 				<p *ngIf="recruiter?.phone">
-					<span>Phone:</span> {{recruiter?.phone}}</p>
+					<span>Телефон:</span> {{recruiter?.phone}}</p>
 			</div>
 			<div class="vacancy-modification">
 				<app-vacancy-form #vacancyForm (loadVacancy)="loadVacancies()" [recruiterId]="recruiter?.id"></app-vacancy-form>
@@ -25,7 +24,7 @@
 	<div class="filter-search">
 		<div class="wrapper">
 			<input type="text" pInputText [(ngModel)]="searchString" placeholder="Enter vacacy name" />
-			<p-button label="Search" icon="pi pi-search" (click)="search()"></p-button>
+			<p-button label="Пошук" icon="pi pi-search" (click)="search()"></p-button>
 		</div>
 	</div>
 	<div class="vacancy-list">
@@ -64,7 +63,7 @@
 
 						<div class="vacancy-logo">
 							<div class="vacancy-container">
-								<img class="logo" src="https://logo-frankfurt.cf-rabota.com.ua/959_20180227113934.png"  
+								<img class="logo" src=""  
 									(click)="companyDetails(recruiter?.company?.id)">
 							</div>
 						</div>

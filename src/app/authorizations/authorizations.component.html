@@ -1,11 +1,11 @@
-<p-dialog [header]="'Sing In as ' + role" [(visible)]="signInDialog" [modal]="true" [responsive]="true" [width]="330"
+<p-dialog [header]="'Увійти'" [(visible)]="signInDialog" [modal]="true" [responsive]="true" [width]="330"
   [minWidth]="200" [minY]="70" [focusOnShow]="false" [resizable]="false" [draggable]="false" [blockScroll]="true"
   [dismissableMask]="false" [baseZIndex]="10000">
 
   <div id="authoruzations">
     <form [formGroup]="authoruzationsForm" novalidate>
 
-      <h4 class="info-title">Login<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Логін<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input id="login" type="text" pInputText formControlName="login">
         <div *ngIf="authoruzationsForm.get('login').invalid &&
@@ -18,14 +18,14 @@
       </div>
       <hr>
 
-      <h4 class="info-title">Password<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Пароль<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input type="password" pPassword formControlName="password" />
         <div *ngIf="authoruzationsForm.get('password').invalid &&
                     (authoruzationsForm.get('password').dirty || authoruzationsForm.get('password').touched)"
           class="alert alert-danger">
           <div *ngIf="authoruzationsForm.controls['password'].errors.required">
-            Password is required
+            Пароль is required
           </div>
         </div>
       </div>
@@ -44,19 +44,19 @@
 
     <hr *ngIf="role!='Recruiter'">
     <div class=fb_google *ngIf="role!='Recruiter'">
-      <label class="title"> Don't have an account?</label>
+      <label class="title"> Немає аккаунту?</label>
     </div>
 
     <div *ngIf="role=='Employee'">
       <a (click)="showSignUpEmployee()" class="title">
-        Sing Up
+        Зареєструватися
         <i class="fa fa-sign-in icon" aria-hidden="true"></i>
       </a>
     </div>
 
     <div class=fb_google *ngIf="role=='Company'">
       <a (click)="showSignUpCompany()" class="title">
-        Sing Up
+        Зареєструватися
         <i class="fa fa-sign-in icon" aria-hidden="true"></i>
       </a>
     </div>
@@ -67,75 +67,75 @@
 </p-dialog>
 
 
-<p-dialog header="Sign Up as Employee" [(visible)]="signUpEmployee" [modal]="true" [responsive]="true" [width]="400"
+<p-dialog header="Увійти як співшукач" [(visible)]="signUpEmployee" [modal]="true" [responsive]="true" [width]="400"
   [minWidth]="200" [minY]="70" [focusOnShow]="false" [resizable]="false" [draggable]="false" [blockScroll]="true"
   [dismissableMask]="false" [baseZIndex]="10000">
 
   <div id="employee-authoruzations">
     <form [formGroup]="signUpEmployeeForm" novalidate>
 
-      <h4 class="info-title">First name<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Ім'я<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input id="firstName" type="text" pInputText formControlName="firstName">
         <div *ngIf="signUpEmployeeForm.get('firstName').invalid &&
                     (signUpEmployeeForm.get('firstName').dirty || signUpEmployeeForm.get('firstName').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpEmployeeForm.controls['firstName'].errors.required">
-            First name is required
+            Ім'я is required
           </div>
           <div *ngIf="signUpEmployeeForm.controls['firstName'].errors.pattern">
-            First name must contain only letters
+            Ім'я must contain only letters
           </div>
           <div *ngIf="signUpEmployeeForm.controls['firstName'].errors.minlength ||
                       signUpEmployeeForm.controls['firstName'].errors.maxlength">
-            First name contains (2-50) chars
+            Ім'я contains (2-50) chars
           </div>
         </div>
       </div>
       <hr>
 
-      <h4 class="info-title">Last name<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Прізвище<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input id="lastName" type="text" pInputText formControlName="lastName">
         <div *ngIf="signUpEmployeeForm.get('lastName').invalid &&
                     (signUpEmployeeForm.get('lastName').dirty || signUpEmployeeForm.get('lastName').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpEmployeeForm.controls['lastName'].errors.required">
-            Last name is required
+            Прізвище is required
           </div>
           <div *ngIf="signUpEmployeeForm.controls['lastName'].errors.pattern">
-            Last name must contain only letters
+            Прізвище must contain only letters
           </div>
           <div *ngIf="signUpEmployeeForm.controls['lastName'].errors.minlength
                       || signUpEmployeeForm.controls['lastName'].errors.maxlength">
-            Last name contains (2-50) chars
+            Прізвище contains (2-50) chars
           </div>
         </div>
       </div>
       <hr>
 
-      <h4 class="resume-title">Birth Date<span class="required-input-symbol">*</span></h4>
+      <h4 class="resume-title">Дата народження<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label size-input">
         <p-calendar [(ngModel)]="birthDate" dateFormat="D d, M yy" formControlName="birthDate"></p-calendar>
         <div *ngIf="signUpEmployeeForm.get('birthDate').invalid &&
                     (signUpEmployeeForm.get('birthDate').dirty || signUpEmployeeForm.get('birthDate').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpEmployeeForm.controls['birthDate'].errors.required">
-            Birth Date is required
+            Дата народження is required
           </div>
         </div>
       </div>
       <hr>
 
-      <h4 class="resume-title">City<span class="required-input-symbol">*</span></h4>
+      <h4 class="resume-title">Місто<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
-        <p-dropdown [options]="cities" optionLabel="name" [(ngModel)]="selectedCity" placeholder="Select a City"
+        <p-dropdown [options]="cities" optionLabel="name" [(ngModel)]="selectedCity" placeholder="Оберіть місто"
           formControlName="city"></p-dropdown>
         <div *ngIf="signUpEmployeeForm.get('city').invalid &&
                     (signUpEmployeeForm.get('city').dirty || signUpEmployeeForm.get('city').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpEmployeeForm.controls['city'].errors.required">
-            City is required
+            Містоis required
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <hr class="hr-email">
 
-      <h4 class="info-title">Password
+      <h4 class="info-title">Пароль
         <span class="required-input-symbol">*</span>
       </h4>
       <div class="ui-float-label">
@@ -172,17 +172,17 @@
                     && (signUpEmployeeForm.get('password').dirty || signUpEmployeeForm.get('password').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpEmployeeForm.controls['password'].errors.required">
-            Password is required
+            Пароль is required
           </div>
           <div *ngIf="signUpEmployeeForm.controls['password'].errors.minlength ||
                       signUpEmployeeForm.controls['password'].errors.maxlength">
-            Password contains (8-100) chars
+            Пароль contains (8-100) chars
           </div>
         </div>
       </div>
       <hr>
 
-      <h4 class="info-title">Confirm password
+      <h4 class="info-title">Підтвердити пароль
         <span class="required-input-symbol">*</span>
       </h4>
       <div class="ui-float-label">
@@ -211,7 +211,7 @@
     <div class="agreement">
       <p-checkbox [(ngModel)]="checkedAgreementEmployee" value="false" binary="false" [formControl]="signUpEmployeeForm.controls['checkedAgreementEmployee']"></p-checkbox>
       <a (click)="openInformation()">
-        <p class=" title Login_text"> I confirm my agreement </p>
+        <p class=" title Login_text"> Я згоден(-на) із політиками ресурсу </p>
       </a>
     </div>
     <div class="footer1"></div>
@@ -221,58 +221,58 @@
     <div class="toolbar-sing-up">
       <button type="button" pButton icon="pi pi-check" (click)="submitEmployeeSignUp()" [disabled]="signUpEmployeeForm.invalid"
         label="Sing Up" class="ui-button-success"></button>
-      <button type="button" pButton icon="pi pi-times" (click)="closeForm()" label="Cancel" class="ui-button-secondary"></button>
+      <button type="button" pButton icon="pi pi-times" (click)="closeForm()" label="Відмінити" class="ui-button-secondary"></button>
     </div>
   </p-footer>
 
 </p-dialog>
 
 
-<p-dialog header="Sign Up as Company" [(visible)]="signUpCompany" [modal]="true" [responsive]="true" [width]="540"
+<p-dialog header="Увійти як компанія" [(visible)]="signUpCompany" [modal]="true" [responsive]="true" [width]="540"
   [minWidth]="200" [minY]="70" [focusOnShow]="false" [resizable]="false" [draggable]="false" [blockScroll]="true"
   [dismissableMask]="false" [baseZIndex]="10000">
 
   <div id="company-authoruzations">
     <form [formGroup]="signUpCompanyForm" novalidate>
 
-      <h4 class="info-title">Company Name<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Назва компанії<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input id="companyName" type="text" pInputText formControlName="companyName">
         <div *ngIf="signUpCompanyForm.get('companyName').invalid &&
                     (signUpCompanyForm.get('companyName').dirty || signUpCompanyForm.get('companyName').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpCompanyForm.controls['companyName'].errors.required">
-            Company Name is required
+            Назва компанії is required
           </div>
           <div *ngIf="signUpCompanyForm.controls['companyName'].errors.pattern">
-            Company name must contain only letters
+            Назва компанії must contain only letters
           </div>
           <div *ngIf="signUpCompanyForm.controls['companyName'].errors.minlength ||
                       signUpCompanyForm.controls['companyName'].errors.maxlength">
-            Company Name contains (1-200) chars
+            Назва компанії contains (1-200) chars
           </div>
         </div>
       </div>
       <hr>
 
-      <h4 class="info-title">Boss Name<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Ім'я керівника<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input id="bossName" type="text" pInputText formControlName="bossName">
         <div *ngIf="signUpCompanyForm.get('bossName').invalid &&
                     (signUpCompanyForm.get('bossName').dirty || signUpCompanyForm.get('bossName').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpCompanyForm.controls['bossName'].errors.required">
-            Boss name is required
+            Ім'я керівника is required
           </div>
           <div *ngIf="signUpCompanyForm.controls['bossName'].errors.minlength ||
                       signUpCompanyForm.controls['bossName'].errors.maxlength">
-            Boss name contains (1-100) chars
+            Ім'я керівника contains (1-100) chars
           </div>
         </div>
       </div>
       <hr>
 
-      <h4 class="info-title">Address<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Адреса<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label address">
         <input id="address" type="text" pInputText formControlName="address">
         <div *ngIf="signUpCompanyForm.get('address').invalid &&
@@ -289,14 +289,14 @@
       </div>
       <hr>
 
-      <h4 class="info-title">Short Description<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Короткий опис<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input id="shortDescription" type="text" pInputText formControlName="shortDescription">
         <div *ngIf="signUpCompanyForm.get('shortDescription').invalid &&
                     (signUpCompanyForm.get('shortDescription').dirty || signUpCompanyForm.get('shortDescription').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpCompanyForm.controls['shortDescription'].errors.required">
-            Short Description is required
+            Короткий опис is required
           </div>
           <div *ngIf="signUpCompanyForm.controls['shortDescription'].errors?.minlength ||
                       signUpCompanyForm.controls['shortDescription'].errors?.maxlength"
@@ -329,7 +329,7 @@
       </div>
       <hr class="hr-email">
 
-      <h4 class="info-title">Password
+      <h4 class="info-title">Пароль
         <span class="required-input-symbol">*</span>
       </h4>
       <div class="ui-float-label">
@@ -338,23 +338,23 @@
                     (signUpCompanyForm.get('password').dirty || signUpCompanyForm.get('password').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpCompanyForm.controls['password'].errors.required">
-            Password is required
+            Пароль is required
           </div>
           <div *ngIf="signUpCompanyForm.controls['password'].errors.minlength ||
                       signUpCompanyForm.controls['password'].errors.maxlength">
-            Password contains (8-100) chars
+            Пароль contains (8-100) chars
           </div>
         </div>
       </div>
       <hr>
-      <h4 class="info-title">Confirm password<span class="required-input-symbol">*</span></h4>
+      <h4 class="info-title">Підтвердити пароль<span class="required-input-symbol">*</span></h4>
       <div class="ui-float-label">
         <input type="password" pPassword formControlName="passwordConfirm" />
         <div *ngIf="signUpCompanyForm.get('passwordConfirm').invalid &&
                     (signUpCompanyForm.get('passwordConfirm').dirty || signUpCompanyForm.get('passwordConfirm').touched)"
           class="alert alert-danger">
           <div *ngIf="signUpCompanyForm.controls['passwordConfirm'].errors.required">
-            Password is required
+            Пароль is required
           </div>
           <div *ngIf="signUpCompanyForm.get('passwordConfirm').value!=signUpCompanyForm.get('password').value && signUpCompanyForm.get('passwordConfirm').dirty"
             class="alert alert-danger">
@@ -364,7 +364,7 @@
       </div>
       <hr>
 
-      <h4 class="vacancy-title">Full Description<span class="required-input-symbol">*</span></h4>
+      <h4 class="vacancy-title">Повний опис<span class="required-input-symbol">*</span></h4>
       <div class="text-area">
         <textarea [rows]="10" pDescription style="resize:none" formControlName="fullDescription" required></textarea>
 
@@ -395,14 +395,14 @@
       </div>
       <hr class="hr-after-website">
 
-      <h4 class="info-title">Phone</h4>
+      <h4 class="info-title">Телефон</h4>
       <div class="ui-float-label">
         <p-inputMask id="phone" mask="(999) 999-9999" formControlName="phone"></p-inputMask>
       </div>
       <hr>
 
       <div>
-        <p-fileUpload name="demo[]" mode="advanced" [showUploadButton]="false" chooseLabel="Upload Logo" (onSelect)="onUpload($event)"
+        <p-fileUpload name="demo[]" mode="advanced" [showUploadButton]="false" chooseLabel="Завантажити логотип" (onSelect)="onUpload($event)"
           accept="image/*" maxFileSize="1000000"></p-fileUpload>
 
       </div>
@@ -419,15 +419,15 @@
       <p-checkbox [(ngModel)]="checkedAgreement" value="false" binary="false" [formControl]="signUpCompanyForm.controls['checkedAgreement']"></p-checkbox>
 
       <a (click)="openInformation()">
-        <p class="title Login_text"> I confirm my agreement </p>
+        <p class="title Login_text"> Я згоден(-на) із політиками ресурсу </p>
       </a>
     </div>
   </div>
 
   <p-footer>
-    <button type="button" pButton icon="pi pi-check" (click)="submitCompanySignUp()" label="Sing up" [disabled]="signUpCompanyForm.invalid"
+    <button type="button" pButton icon="pi pi-check" (click)="submitCompanySignUp()" label="Зареєструватися" [disabled]="signUpCompanyForm.invalid"
       class="ui-button-success"></button>
-    <button type="button" pButton icon="pi pi-times" (click)="closeForm()" label="Cancel" class="ui-button-secondary"></button>
+    <button type="button" pButton icon="pi pi-times" (click)="closeForm()" label="Відмінити" class="ui-button-secondary"></button>
   </p-footer>
 
 </p-dialog>
@@ -438,11 +438,11 @@
   [baseZIndex]="10000">
 
   <div class="title">
-    I confirm my agreement with the Terms of Use of the site joblist.ua and the Privacy Policy
+    Я згоден(-на) із політиками ресурсу with the Terms of Use of the site joblist.ua and the Privacy Policy
   </div>
 
   <p-footer>
-    <button type="button" pButton icon="pi pi-times" (click)="closeInformationForm()" label="Cancel" class="ui-button-secondary"></button>
+    <button type="button" pButton icon="pi pi-times" (click)="closeInformationForm()" label="Відмінити" class="ui-button-secondary"></button>
   </p-footer>
 
 </p-dialog>

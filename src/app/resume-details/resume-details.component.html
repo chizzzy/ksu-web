@@ -5,9 +5,9 @@
         <p><span>Full Name: </span>{{resume?.employee?.firstName}} {{resume?.employee?.lastName}}</p>
         <p><span>E-Mail: </span>{{resume?.employee?.email}}</p>
         <p><span>Sex: </span>{{resume?.employee?.sex ==='m'?'Male':resume?.employee?.sex==='f'?'Female':''}}</p>
-        <p><span>City: </span>{{resume?.employee?.city?.name}}</p>
-        <p><span>Birth Date: </span>{{resume?.employee?.birthData | date }}</p>
-        <p><span>Phone: </span>{{resume?.employee?.phone}}</p>
+        <p><span>Місто: </span>{{resume?.employee?.city?.name}}</p>
+        <p><span>Дата народження: </span>{{resume?.employee?.birthData | date }}</p>
+        <p><span>Телефон: </span>{{resume?.employee?.phone}}</p>
         <p><span>Family state: </span>{{resume?.familyState}}</p>
         </div>
         <button type="button" (click)="vacanciesList.showSideBar(resume?.id)" pButton icon="pi pi-copy" label="Send invitation"></button>
@@ -40,7 +40,7 @@
         </p-fieldset>
         <p-fieldset legend="Experience">
             <div *ngFor="let exp of resume?.experiences">
-            <p><span>Company Name: </span>{{exp.companyName}}</p>
+            <p><span>Назва компанії: </span>{{exp.companyName}}</p>
             <p><span>Position: </span>{{exp.position}}</p>
             <p><span>Start Date: </span>{{exp.startDate | date}}</p>
             <p><span>Finish Date: </span>{{exp.finishDate | date}}</p>

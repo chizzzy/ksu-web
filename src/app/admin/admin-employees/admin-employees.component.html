@@ -19,15 +19,14 @@
     <table>
         <tr>
             <th>Picture</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
             <th>Email</th>
-            <th>Phone</th>
+            <th>Телефон</th>
             <th>Birthdate</th>
             <th>Delete</th>
         </tr>
         <tr *ngFor="let employee of employees">
-            <td><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Stevejobs.jpg" alt="" /></td>
             <td>{{employee.firstName}}</td>
             <td>{{employee.lastName}}</td>
             <td>{{employee.email}}</td>
