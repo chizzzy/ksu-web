@@ -5,35 +5,35 @@
 	<div id="information-form">
 		<form [formGroup]="companyInfoForm" novalidate>
 
-			<h4 class="info-title">Company Name<span class="required-input-symbol">*</span></h4>
+			<h4 class="info-title">Назва компанії<span class="required-input-symbol">*</span></h4>
 			<div class="ui-float-label">
 				<input id="companyName" type="text" pInputText formControlName="companyName">
 				<div *ngIf="companyInfoForm.get('companyName').invalid &&
 									 (companyInfoForm.get('companyName').dirty || companyInfoForm.get('companyName').touched)"
 				 class="alert alert-danger">
 					<div *ngIf="companyInfoForm.controls['companyName'].errors.required">
-						Company Name is required
+						Назва компанії is required
 					</div>
 					<div *ngIf="companyInfoForm.controls['companyName'].errors.minlength ||
 											companyInfoForm.controls['companyName'].errors.maxlength">
-						Company Name contains (1-200) chars
+						Назва компанії contains (1-200) chars
 					</div>
 				</div>
 			</div>
 			<hr>
 
-			<h4 class="info-title">Boss Name<span class="required-input-symbol">*</span></h4>
+			<h4 class="info-title">Ім'я керівника<span class="required-input-symbol">*</span></h4>
 			<div class="ui-float-label">
 				<input id="bossName" type="text" pInputText formControlName="bossName">
 				<div *ngIf="companyInfoForm.get('bossName').invalid &&
 										(companyInfoForm.get('bossName').dirty || companyInfoForm.get('bossName').touched)"
 				 class="alert alert-danger">
 					<div *ngIf="companyInfoForm.controls['bossName'].errors.required">
-						Boss Name is required
+						Ім'я керівника is required
 					</div>
 					<div *ngIf="companyInfoForm.controls['bossName'].errors.minlength ||
 											companyInfoForm.controls['bossName'].errors.maxlength">
-						Boss Name should contain (1-100) chars
+						Ім'я керівника should contain (1-100) chars
 					</div>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 			</div>
 			<hr class="hr-after-email">
 
-			<h4 class="info-title">Address<span class="required-input-symbol">*</span></h4>
+			<h4 class="info-title">Адреса<span class="required-input-symbol">*</span></h4>
 			<div class="ui-float-label company-adress-input">
 				<input id="address" type="text" pInputText formControlName="address">
 				<div *ngIf="companyInfoForm.get('address').invalid &&
@@ -73,7 +73,7 @@
 			</div>
 			<hr>
 
-			<h4 class="info-title">Short Description<span class="required-input-symbol">*</span></h4>
+			<h4 class="info-title">Короткий опис<span class="required-input-symbol">*</span></h4>
 			<div class="ui-float-label">
 				<input id="shortDescription" type="text" pInputText formControlName="shortDescription">
 				<div *ngIf="companyInfoForm.get('shortDescription').invalid &&
@@ -81,7 +81,7 @@
 										class="alert alert-danger">
 
 					<div *ngIf="companyInfoForm.controls['shortDescription'].errors.required">
-						Short Description is required
+						Короткий опис is required
 					</div>
 					<div *ngIf="companyInfoForm.controls['shortDescription'].errors?.minlength || companyInfoForm.controls['shortDescription'].errors?.maxlength"
 					 class="alert alert-danger">
@@ -99,7 +99,7 @@
 				 class="alert alert-danger">
 
 					<div *ngIf="companyInfoForm.controls['fullDescription'].errors.required">
-						Full Description is required
+						Повний опис is required
 					</div>
 				</div>
 			</div>
@@ -120,14 +120,14 @@
 			</div>
 			<hr class="hr-after-website">
 
-			<h4 class="info-title">Phone</h4>
+			<h4 class="info-title">Телефон</h4>
 			<div class="ui-float-label">
 				<p-inputMask id="phone" mask="(999) 999-9999" formControlName="phone"></p-inputMask>
 			</div>
 			<hr>
 
 			<div>
-				<p-fileUpload name="demo[]" mode="advanced" [showUploadButton]="false" chooseLabel="Upload Logo" (onSelect)="onUpload($event)"
+				<p-fileUpload name="demo[]" mode="advanced" [showUploadButton]="false" chooseLabel="Завантажити логотип" (onSelect)="onUpload($event)"
 				 accept="image/*" maxFileSize="1000000"></p-fileUpload>
 			</div>
 
@@ -137,9 +137,9 @@
 	<p-footer>
 		<button type="button" pButton icon="pi pi-check" (click)="submit()" [disabled]="companyInfoForm.invalid" label="Confirm"
 		 class="ui-button-success"></button>
-		<button type="button" pButton icon="pi pi-times" (click)="display=false" label="Cancel" class="ui-button-secondary"></button>
+		<button type="button" pButton icon="pi pi-times" (click)="display=false" label="Відмінити" class="ui-button-secondary"></button>
 	</p-footer>
 	
 </p-dialog>
 
-<button type="button" (click)="showInformationForm('Update', company)" pButton icon="pi pi-fw pi-plus" label="Update info"></button>
+<button type="button" (click)="showInformationForm('Update', company)" pButton icon="pi pi-fw pi-plus" label="Оновити інформацію"></button>

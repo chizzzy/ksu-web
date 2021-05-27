@@ -20,12 +20,11 @@
             <th>Picture</th>
             <th>Name</th>
             <th>Company</th>
-            <th>City</th>
+            <th>Місто</th>
             <th>CreateDate</th>
             <th>Check/Uncheck</th>
         </tr>
         <tr *ngFor="let vacancy of vacancies">
-            <td><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/SoftServe_logo_new.png" alt="" /></td>
             <td>{{vacancy.name}}</td>
             <td>{{vacancy.recruiter.company.name}}</td>
             <td>{{vacancy.city.name}}</td>

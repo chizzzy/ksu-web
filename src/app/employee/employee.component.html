@@ -13,18 +13,18 @@
       <p>
         <span>Sex: </span>{{employee?.sex ==='m'?'Male':employee?.sex==='f'?'Female':''}}</p>
       <p>
-        <span>City: </span>{{employee?.city.name}}</p>
+        <span>Місто: </span>{{employee?.city.name}}</p>
       <p>
-        <span>Birth Date: </span>{{employee?.birthDate | date}}</p>
+        <span>Дата народження: </span>{{employee?.birthDate | date}}</p>
       <p>
-        <span>Phone: </span>{{employee?.phone}}</p>
+        <span>Телефон: </span>{{employee?.phone}}</p>
       <p>
         <span>Family state: </span>{{resume?.familyState}}</p>
     </div>
     <div  class="additional-button">
       <div class="additional-button"> 
         <app-resume-form #resumeForm (loadResume)="loadResumeById(employee?.id)"></app-resume-form>
-        <button type="button" (click)="resumeForm.showInfoForm(employee)" pButton icon="pi pi-copy" label="Update info"></button>
+        <button type="button" (click)="resumeForm.showInfoForm(employee)" pButton icon="pi pi-copy" label="Оновити інформацію"></button>
       </div>
       <div class="additional-button">
         <button type="button" (click)="resumeForm.showResumeForm(action, resume)" pButton icon="pi pi-copy" [label]="action + ' CV'"></button>
@@ -75,7 +75,7 @@
     <p-fieldset legend="Experience">
       <div *ngFor="let exp of resume?.experiences">
         <p>
-          <span>Company Name: </span>{{exp.companyName}}</p>
+          <span>Назва компанії: </span>{{exp.companyName}}</p>
         <p>
           <span>Position: </span>{{exp.position}}</p>
         <p>

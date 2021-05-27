@@ -2,7 +2,7 @@
     <form [formGroup]="authoruzationsForm" class="login-form" novalidate>
         <span class="login-form-title">Welcome</span>
         <span class="login-form-avatar">
-            <img src="https://avatars1.githubusercontent.com/u/29520599?s=400&u=1f5eddbe458967a9d25e9d3ae35caa4b1074ce6b&v=4" alt="AVATAR">
+            <img src="https://i.stack.imgur.com/lABiT.jpg" alt="AVATAR">
         </span>
         <div class="error-message" *ngIf="errorMessage">
             {{errorMessage}}
@@ -22,7 +22,7 @@
             <div *ngIf="authoruzationsForm.get('password').invalid && (authoruzationsForm.get('password').dirty || authoruzationsForm.get('password').touched)"
                 class="alert alert-danger">
                 <div *ngIf="authoruzationsForm.controls['password'].errors.required">
-                    Password is required
+                    Пароль is required
                 </div>
             </div>
         </div>
