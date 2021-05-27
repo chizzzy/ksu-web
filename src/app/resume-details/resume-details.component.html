@@ -2,13 +2,13 @@
     <div class="wrapper-flex">
         <img class="profile-avatar" src="https://avatars0.githubusercontent.com/u/43314300?s=400&u=1ab66ea04a1b8060af09ee83b3ba69a44a9f8710&v=4" alt="Profile Avatar">
         <div class="additional-info">
-        <p><span>Full Name: </span>{{resume?.employee?.firstName}} {{resume?.employee?.lastName}}</p>
-        <p><span>E-Mail: </span>{{resume?.employee?.email}}</p>
-        <p><span>Sex: </span>{{resume?.employee?.sex ==='m'?'Male':resume?.employee?.sex==='f'?'Female':''}}</p>
+        <p><span>Повне ім'я: </span>{{resume?.employee?.firstName}} {{resume?.employee?.lastName}}</p>
+        <p><span>Емейл: </span>{{resume?.employee?.email}}</p>
+        <p><span>Стать: </span>{{resume?.employee?.sex ==='m'?'Male':resume?.employee?.sex==='f'?'Female':''}}</p>
         <p><span>Місто: </span>{{resume?.employee?.city?.name}}</p>
         <p><span>Дата народження: </span>{{resume?.employee?.birthData | date }}</p>
         <p><span>Телефон: </span>{{resume?.employee?.phone}}</p>
-        <p><span>Family state: </span>{{resume?.familyState}}</p>
+        <p><span>Сімейний статус: </span>{{resume?.familyState}}</p>
         </div>
         <button type="button" (click)="vacanciesList.showSideBar(resume?.id)" pButton icon="pi pi-copy" label="Send invitation"></button>
     </div>
@@ -31,17 +31,17 @@
         </p-fieldset>
         <p-fieldset legend="Educations">
             <div *ngFor="let ed of resume?.educationPeriods">
-            <p><span>School: </span>{{ed.school?.name}}</p>
+            <p><span>Школа: </span>{{ed.school?.name}}</p>
             <p *ngIf="ed.faculty"><span>Facylty: </span>{{ed.faculty?.name}}</p>
-            <p><span>Start Date: </span>{{ed.startDate | date}}</p>
-            <p><span>Finish Date: </span>{{ed.finishDate | date}}</p>
+            <p><span>Дата початку: </span>{{ed.startDate | date}}</p>
+            <p><span>Дата кінця: </span>{{ed.finishDate | date}}</p>
             <hr>    
             </div>
         </p-fieldset>
         <p-fieldset legend="Experience">
             <div *ngFor="let exp of resume?.experiences">
             <p><span>Назва компанії: </span>{{exp.companyName}}</p>
-            <p><span>Position: </span>{{exp.position}}</p>
+            <p><span>Позиція: </span>{{exp.position}}</p>
             <p><span>Start Date: </span>{{exp.startDate | date}}</p>
             <p><span>Finish Date: </span>{{exp.finishDate | date}}</p>
             <hr>

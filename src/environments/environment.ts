@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 export const environment = {
   production: false,
-  server_url: 'https://localhost:44378/api',
+  server_url: 'https://dev-ksu-employment.azurewebsites.net/api',
   client_url: 'http://localhost:4200',
   firebase: {
     apiKey: 'AIzaSyAG1-eRjUhpALauRp4MchwAcOGr8EPAC_4',

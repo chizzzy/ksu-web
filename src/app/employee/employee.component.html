@@ -7,11 +7,11 @@
       
     <div class="additional-info">
       <p>
-        <span>Full Name: </span>{{employee?.firstName}} {{employee?.lastName}}</p>
+        <span>Повне ім'я: </span>{{employee?.firstName}} {{employee?.lastName}}</p>
       <p>
-        <span>E-Mail: </span>{{employee?.email}}</p>
+        <span>Емейл: </span>{{employee?.email}}</p>
       <p>
-        <span>Sex: </span>{{employee?.sex ==='m'?'Male':employee?.sex==='f'?'Female':''}}</p>
+        <span>Стать: </span>{{employee?.sex ==='m'?'Male':employee?.sex==='f'?'Female':''}}</p>
       <p>
         <span>Місто: </span>{{employee?.city.name}}</p>
       <p>
@@ -19,7 +19,7 @@
       <p>
         <span>Телефон: </span>{{employee?.phone}}</p>
       <p>
-        <span>Family state: </span>{{resume?.familyState}}</p>
+        <span>Сімейний статус: </span>{{resume?.familyState}}</p>
     </div>
     <div  class="additional-button">
       <div class="additional-button"> 
@@ -27,7 +27,7 @@
         <button type="button" (click)="resumeForm.showInfoForm(employee)" pButton icon="pi pi-copy" label="Оновити інформацію"></button>
       </div>
       <div class="additional-button">
-        <button type="button" (click)="resumeForm.showResumeForm(action, resume)" pButton icon="pi pi-copy" [label]="action + ' CV'"></button>
+        <button type="button" (click)="resumeForm.showResumeForm(action, resume)" pButton icon="pi pi-copy" label="Створити резюме"></button>
       </div>
     </div>
   </div>
@@ -63,12 +63,12 @@
     <p-fieldset legend="Educations">
       <div *ngFor="let ed of resume?.educationPeriods">
         <p>
-          <span>School: </span>{{ed.school?.name}}</p>
+          <span>Школа: </span>{{ed.school?.name}}</p>
         <p *ngIf="ed.faculty">{{ed.faculty?.name}}</p>
         <p>
-          <span>Start Date: </span>{{ed.startDate | date}}</p>
+          <span>Дата початку: </span>{{ed.startDate | date}}</p>
         <p>
-          <span>Finish Date: </span>{{ed.finishDate | date}}</p>
+          <span>Дата кінця: </span>{{ed.finishDate | date}}</p>
         <hr>
       </div>
     </p-fieldset>
@@ -77,11 +77,11 @@
         <p>
           <span>Назва компанії: </span>{{exp.companyName}}</p>
         <p>
-          <span>Position: </span>{{exp.position}}</p>
+          <span>Позиція: </span>{{exp.position}}</p>
         <p>
-          <span>Start Date: </span>{{exp.startDate | date}}</p>
+          <span>Дата початку: </span>{{exp.startDate | date}}</p>
         <p>
-          <span>Finish Date: </span>{{exp.finishDate | date}}</p>
+          <span>Дата кінця: </span>{{exp.finishDate | date}}</p>
         <hr>
       </div>
 

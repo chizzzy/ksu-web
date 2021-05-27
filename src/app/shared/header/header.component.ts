@@ -64,7 +64,7 @@ export class HeaderComponent implements OnInit {
 
      return [
       {
-        label: 'Home',
+        label: 'Головна',
         icon: 'fa fa-home',
         command: (event) => {this.router.navigate(['/companies', this.uId]); }
       },
@@ -81,7 +81,7 @@ export class HeaderComponent implements OnInit {
 
     return [
       {
-        label: 'Home',
+        label: 'Головна',
         icon: 'fa fa-home',
         command: (event) => { this.router.navigate(['/recruiters', this.uId]); }},
       {
@@ -97,7 +97,7 @@ export class HeaderComponent implements OnInit {
 
     return [
       {
-        label: 'Home',
+        label: 'Головна',
         icon: 'fa fa-home',
         command: (event) => { this.router.navigate(['/employees', this.uId]); }
       },
