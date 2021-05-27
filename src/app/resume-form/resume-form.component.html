@@ -1,9 +1,9 @@
-<p-dialog header="Update Info" [(visible)]="infoDialog" [modal]="true" [responsive]="true" [minY]="70" [focusOnShow]="false"
+<p-dialog header="Оновити інформацію" [(visible)]="infoDialog" [modal]="true" [responsive]="true" [minY]="70" [focusOnShow]="false"
     [width]="650" [minWidth]="300" [resizable]="false" [draggable]="false" [blockScroll]="true" [baseZIndex]="10000">
     <div id="resume-form">
         <form [formGroup]="employeeForm" novalidate>
             <div>
-                <p-fileUpload name="demo[]" mode="advanced" [showUploadButton]="false" chooseLabel="Upload Photo" (onSelect)="onUpload($event)"
+                <p-fileUpload name="demo[]" mode="advanced" [showUploadButton]="false" chooseLabel="Завантажити фото" (onSelect)="onUpload($event)"
                     accept="image/*" maxFileSize="1000000"></p-fileUpload>
             </div>
             <h4 class="info-title">Full Name
@@ -12,28 +12,28 @@
             <div>
                 <div class="ui-float-label size-input">
                     <input id="firstname" type="text" pInputText formControlName="firstName">
-                    <label for="firstname">First Name</label>
+                    <label for="firstname">Ім'я</label>
                     <div *ngIf="employeeForm.get('firstName').invalid && (employeeForm.get('firstName').dirty || employeeForm.get('firstName').touched)"
                         class="alert alert-danger">
                         <div *ngIf="employeeForm.controls['firstName'].errors.required">
-                            First Name is required
+                            Ім'я is required
                         </div>
                         <div *ngIf="employeeForm.controls['firstName'].errors.minlength || employeeForm.controls['firstName'].errors.maxlength">
-                            First Name should contain (1-50) chars
+                            Ім'я should contain (1-50) chars
                         </div>
 
                     </div>
                 </div>
                 <div class="ui-float-label size-input">
                     <input id="lastname" type="text" pInputText formControlName="lastName">
-                    <label for="lastname">Last Name</label>
+                    <label for="lastname">Прізвище</label>
                     <div *ngIf="employeeForm.get('lastName').invalid && (employeeForm.get('lastName').dirty || employeeForm.get('lastName').touched)"
                         class="alert alert-danger">
                         <div *ngIf="employeeForm.controls['lastName'].errors.required">
-                            Last Name is required
+                            Прізвище is required
                         </div>
                         <div *ngIf="employeeForm.controls['lastName'].errors.minlength || employeeForm.controls['lastName'].errors.maxlength">
-                            Last Name should contain (1-50) chars
+                            Прізвище should contain (1-50) chars
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
             </div>
             <hr class="hr-email">
 
-            <h4 class="info-title">Birth Date
+            <h4 class="info-title">Дата народження
                 <span class="required-input-symbol">*</span>
             </h4>
             <div class="ui-float-label size-input">
@@ -68,26 +68,26 @@
                 <div *ngIf="employeeForm.get('birthDate').invalid && (employeeForm.get('birthDate').dirty || employeeForm.get('birthDate').touched)"
                     class="alert alert-danger">
                     <div *ngIf="employeeForm.controls['birthDate'].errors.required">
-                        Birth Date is required
+                        Дата народження is required
                     </div>
                 </div>
             </div>
             <hr>
 
-            <h4 class="info-title">City
+            <h4 class="info-title">Місто
                 <span class="required-input-symbol">*</span>
             </h4>
             <div class="ui-float-label">
-                <p-dropdown [options]="cities" optionLabel="name" [(ngModel)]="selectedCity" placeholder="Select a City" formControlName="city"></p-dropdown>
+                <p-dropdown [options]="cities" optionLabel="name" [(ngModel)]="selectedCity" placeholder="Оберіть місто" formControlName="city"></p-dropdown>
                 <div *ngIf="employeeForm.get('city').invalid && (employeeForm.get('city').dirty || employeeForm.get('city').touched)" class="alert alert-danger">
                     <div *ngIf="employeeForm.controls['city'].errors.required">
-                        City is required
+                        Містоis required
                     </div>
                 </div>
             </div>
             <hr>
 
-            <h4 class="info-title">Phone</h4>
+            <h4 class="info-title">Телефон</h4>
             <div class="ui-float-label phone size-input">
                 <p-inputMask id="phone" mask="(999) 999-9999" formControlName="phone"></p-inputMask>
             </div>
@@ -98,7 +98,7 @@
     <p-footer>
         <button type="button" pButton icon="pi pi-check" [disabled]="employeeForm.invalid" (click)="submitEmployeeForm()" label="Confirm"
             class="ui-button-success"></button>
-        <button type="button" pButton icon="pi pi-times" (click)="infoDialog=false" label="Cancel" class="ui-button-secondary"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="infoDialog=false" label="Відмінити" class="ui-button-secondary"></button>
     </p-footer>
 </p-dialog>
 
@@ -269,7 +269,7 @@
                         <h4 class="resume-title">Experience </h4>
                         <div class="ui-float-label">
                             <input type="text" pInputText formControlName="companyName">
-                            <label for="companyname">Company Name</label>
+                            <label for="companyname">Назва компанії</label>
                         </div>
                         <div class="ui-float-label">
                             <input type="text" pInputText formControlName="positionExp">
@@ -302,11 +302,11 @@
                             <div class="size-input">
                                 <div class="ui-float-label">
                                     <input id="companyName" type="text" pInputText formControlName="companyName">
-                                    <label for="companyname">Company Name</label>
+                                    <label for="companyname">Назва компанії</label>
                                     <div *ngIf="FormExperience.get('companyName').invalid && (FormExperience.get('companyName').dirty || FormExperience.get('companyName').touched)"
                                         class="alert alert-danger">
                                         <div *ngIf="FormExperience.controls['companyName'].errors.minlength || FormExperience.controls['companyName'].errors.maxlength">
-                                            Company Name contains (1-200) chars
+                                            Назва компанії contains (1-200) chars
                                         </div>
                                     </div>
                                 </div>
@@ -364,6 +364,6 @@
 
     <p-footer>
         <button type="button" pButton icon="pi pi-check" (click)="submit()" label="Confirm" class="ui-button-success"></button>
-        <button type="button" pButton icon="pi pi-times" (click)="display=false" label="Cancel" class="ui-button-secondary"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="display=false" label="Відмінити" class="ui-button-secondary"></button>
     </p-footer>
 </p-dialog>

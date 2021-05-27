@@ -6,11 +6,11 @@
     <div class="wrapper-flex">
       <div class="additional-info">
         <p>{{company?.shortDescription}}</p>
-        <p><span>Company Name:</span> {{company?.name}}</p>
-        <p><span>Boss Name:</span> {{company?.bossName}}</p>
+        <p><span>Назва компанії:</span> {{company?.name}}</p>
+        <p><span>Ім'я керівника:</span> {{company?.bossName}}</p>
         <p><span>E-Mail:</span> {{company?.email}}</p>
-        <p *ngIf="company?.phone"><span>Phone:</span> {{company?.phone}}</p>
-        <p><span>Address:</span> {{company?.address}}</p>
+        <p *ngIf="company?.phone"><span>Телефон:</span> {{company?.phone}}</p>
+        <p><span>Адреса:</span> {{company?.address}}</p>
         <p *ngIf="company?.site"><span>Web site:</span> {{company?.site}}</p>
       </div>
       <div>
@@ -20,7 +20,7 @@
 
     <div class="description">
       <p-accordion>
-        <p-accordionTab header="Description" [selected]="false">
+        <p-accordionTab header="Опис" [selected]="false">
           {{company?.fullDescription}}
         </p-accordionTab>
       </p-accordion>
@@ -29,15 +29,15 @@
 
   <div class="filter-search">
     <div class="wrapper">
-      <input type="text" pInputText [(ngModel)]="searchString" placeholder="Enter Recruiter name or email" />
-      <p-button label="Search" icon="pi pi-search" (click)="search()"></p-button>
+      <input type="text" pInputText [(ngModel)]="searchString" placeholder="Введіть ім'я або електронну пошту рекрутера" />
+      <p-button label="Пошук" icon="pi pi-search" (click)="search()"></p-button>
     </div>
   </div>
 
   <div class="recruiter-list">
     <div class="recruiters-text">
       <hr class="fd-f1">
-      <p>Recruiters</p>
+      <p>Рекрутери</p>
       <hr class="fd-f1">
       <app-recruiter-form #recruiterForm (loadRecruiters)="loadRecruiters()" [companyId]="company?.id"></app-recruiter-form>
     </div>

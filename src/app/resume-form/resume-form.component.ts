@@ -286,8 +286,7 @@ export class ResumeFormComponent implements OnInit {
     });
   }
 
-  showResumeForm(action: string, resume = null) {
-    debugger;
+  showResumeForm(action: string, resume) {
     this.resume = resume;
     this.resumeForm.reset();
     this.display = true;
@@ -392,7 +391,7 @@ export class ResumeFormComponent implements OnInit {
       phone: this.employeeForm.get('phone').value,
       photoData: this.base64,
       photoMimeType: this.type,
-      sex: this.employee.sex,
+      sex: "m",
       birthDate: this.employeeForm.get('birthDate').value,
       email: this.employeeForm.get('email').value,
       cityId: this.selectedCity.id,
@@ -401,8 +400,9 @@ export class ResumeFormComponent implements OnInit {
   }
 
   getRequestResume(): ResumeRequest {
+
     return {
-      id: this.resume.id,
+      id: Math.random(),
       linkedin: this.resumeForm.get('linkedIn').value,
       github: this.resumeForm.get('gitHub').value,
       facebook: this.resumeForm.get('facebook').value,
@@ -412,7 +412,7 @@ export class ResumeFormComponent implements OnInit {
       softSkills: this.resumeForm.get('softSkills').value,
       keySkills: this.resumeForm.get('keySkills').value,
       courses: this.resumeForm.get('courses').value,
-      createDate: this.resume.createDate,
+      createDate: new Date(),
       workAreaId: this.selectedWorkArea.id,
       position: this.resumeForm.get('position').value,
       introduction: this.resumeForm.get('keySkills').value,

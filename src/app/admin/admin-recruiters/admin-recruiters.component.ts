@@ -65,8 +65,8 @@ export class AdminRecruitersComponent implements OnInit {
 
         this.searchOptions = [
             { label: 'Email', value: 'email' },
-            { label: 'First Name', value: 'firstName' },
-            { label: 'Last Name', value: 'lastName' }
+            { label: 'Ім\'я', value: 'firstName' },
+            { label: 'Прізвище', value: 'lastName' }
         ];
     }
 
@@ -152,9 +152,9 @@ export class AdminRecruitersComponent implements OnInit {
             case 'email':
                 return 'Enter email';
             case 'firstName':
-                return 'Enter first name';
+                return 'Enter Ім\'я';
             case 'lastName':
-                return 'Enter last name';
+                return 'Enter Прізвище';
 
             default: return null;
         }
