@@ -47,9 +47,9 @@ export class HeaderComponent implements OnInit {
     this.activeRoute.params.forEach( (params: Params) =>  this.index = params.id);
 
     this.signInItems = [
-      {label: 'Sign In as Employee', icon: 'fa fa-user', command: (event) => { this.authorizations.showSignIn('Employee'); }},
-      {label: 'Sign In as Company', icon: 'fa fa-building', command: (event) => { this.authorizations.showSignIn('Company'); }},
-      {label: 'Sign In as Recruiter', icon: 'fa fa-user-circle-o', command: (event) => { this.authorizations.showSignIn('Recruiter'); }}
+      {label: 'Увійти як Студент', icon: 'fa fa-user', command: (event) => { this.authorizations.showSignIn('Employee'); }},
+      {label: 'Увійти як Компанія', icon: 'fa fa-building', command: (event) => { this.authorizations.showSignIn('Company'); }},
+      {label: 'Увійти як Рекрутер', icon: 'fa fa-user-circle-o', command: (event) => { this.authorizations.showSignIn('Recruiter'); }}
     ];
 
     this.itemsForCompany = this.getItemsForCompany();
